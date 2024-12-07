@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site Web</title>
+<style>
+    /* Styles généraux */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* En-tête */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-container h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffdd57; /* Changement de couleur au survol */
+}
+
+/* Conteneur principal */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px); /* Ajustement pour l'en-tête */
+    padding: 20px;
+}
+
+/* Conteneur de contact */
+.contact-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+}
+
+/* Titre */
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #007bff; /* Couleur principale */
+    text-align: center;
+}
+
+/* Champs de formulaire */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+/* Bouton de soumission */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Alertes */
+.alert {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+    display: none; /* Caché par défaut */
+    text-align: center;
+}
+
+/* Classe pour afficher la réponse */
+.hidden {
+    display: none; /* Pour cacher les éléments */
+}
+
+.show {
+    display: block; /* Pour montrer les éléments */
+}
+
+/* Media Queries pour la réactivité */
+@media (max-width: 600px) {
+    h2 {
+        font-size: 1.5em; /* Ajuster la taille du titre sur les petits écrans */
+    }
+
+    button {
+        font-size: 0.9em; /* Ajuster la taille du bouton */
+    }
+
+    nav ul li {
+        display: block; /* Empiler les éléments de navigation sur petits écrans */
+        margin: 5px 0;
+    }
+}
+</style>
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <h1>Blanchisserie Isuku</h1>
+        <nav>
+            <ul>
+                <li><a href="contacthtml.html">Contact</a></li>
+                <li><a href="https://wa.me/25762668961">WhatsApp</a></li>
+                <li><a href="sms.html">SMS</a></li>
+                <li><a href="pay.html">Get Pay</a></li>
+                <li><a href="meteo.html">Meteo</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="contact-container">
+        <h2>Contactez-nous</h2>
+        <form id="contactForm" action="#" method="POST">
+            <div class="form-group">
+                <label for="name">Nom:</label>
+                <input type="text" id="name" name="name" placeholder="Votre nom" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Votre email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Votre message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Envoyer</button>
+        </form>
+        <div class="alert" id="alertSuccess">Message envoyé avec succès!</div>
+    </div>
+
+  
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script src="./mycontact.js"></script>
+
+
+</body>
+</html>
